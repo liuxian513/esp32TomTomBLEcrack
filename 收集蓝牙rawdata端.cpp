@@ -39,14 +39,14 @@ class MyAdvertisedDeviceCallbacks: public BLEAdvertisedDeviceCallbacks {
         pBLEScan->stop();
         Serial.printf("Advertised Device: %s \n", advertisedDevice.toString().c_str());
 
-        String rawDataHex = "02010617FF"; 
+        String rawDataHex = "02010617FF"; //manufacturerdata前补充的数据
         std::string rawData = advertisedDevice.getManufacturerData();
         for (auto byte : rawData) {
             char buf[3];
             snprintf(buf, sizeof(buf), "%02X", (unsigned char)byte);
             rawDataHex += buf;
         }
-        rawDataHex += "03033CFE0C0952544B5F42545F342E3100";
+        rawDataHex += "03033CFE0C0952544B5F42545F342E3100";//manufacturerdata后补充的数据
 
         String jsonString = "{\"rawData\":\"" + rawDataHex + "\"}";
 
