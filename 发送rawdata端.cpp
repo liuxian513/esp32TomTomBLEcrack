@@ -144,7 +144,7 @@ void loop() {
   delay(1000);
   
   LCD_Clear(BLACK);
-  Paint_DrawString_EN(20, 50, "Execution completed!--by liuxian", &Font20, BLACK, GREEN);
+  Paint_DrawString_EN(20, 50, "Execution completed!", &Font20, BLACK, GREEN);
   delay(5000);
   LCD_Clear(BLACK);
   delay(1000);
