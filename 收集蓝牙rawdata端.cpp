@@ -51,7 +51,7 @@ class MyAdvertisedDeviceCallbacks: public BLEAdvertisedDeviceCallbacks {
         String jsonString = "{\"rawData\":\"" + rawDataHex + "\"}";
 
         HTTPClient http;
-        http.begin("http://112.74.39.16:3000/data");
+        http.begin("http://服务器ip地址:3000/data");   //在这写入服务器api
         http.addHeader("Content-Type", "application/json");
         int httpResponseCode = http.POST(jsonString);
 
