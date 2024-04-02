@@ -15,8 +15,8 @@ uint8_t bleMac[6] = {0x5C, 0xC3, 0x36, 0x8C, 0xBC, 0x7C};
 uint8_t bleRaw[31];
 boolean rawMoreThan31 = false;
 uint8_t bleRaw32[32]; 
-const char* ssid = "liu";
-const char* password = "liuxian88";
+const char* ssid = "你的wifi名字";
+const char* password = "你的wifi密码";//把手机热点设置成对应的wifi
 
 void setup() {
   Serial.begin(115200);
@@ -47,7 +47,7 @@ void setup() {
 void loop() {
 
   HTTPClient http;
-  http.begin("http://112.74.39.16:3000/rawData");
+  http.begin("http://服务器ip:3000/rawData");//在这填入服务器api
   
   LCD_Clear(BLACK);
   Paint_DrawString_EN(20, 50, "Sending HTTP GET...", &Font20, BLACK, GREEN);
