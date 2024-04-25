@@ -108,7 +108,7 @@ void setup() {
 
   startMillis = millis();  // 初始化启动时间
 
-  esp_task_wdt_init(30, true);// 初始化看门狗定时器，设置超时为30秒
+  esp_task_wdt_init(30, false);// 初始化看门狗定时器，设置超时为30秒
   
   esp_task_wdt_add(NULL);// 将当前任务添加到看门狗监控列表
 
